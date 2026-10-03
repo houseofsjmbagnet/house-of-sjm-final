@@ -460,6 +460,17 @@
               </div>
             </div>
 
+            <div class="mt-6">
+              <label for="paymentMethod" class="block text-xs font-black uppercase tracking-wider text-white/55 mb-2">Payment Method</label>
+              <select id="paymentMethod" class="w-full rounded-xl bg-sjm-ink border border-white/10 text-white px-4 py-3.5 outline-none focus:border-sjm-gold">
+                <option value="GCash">💙 GCash</option>
+                <option value="Maya">💚 Maya</option>
+                <option value="Bank Transfer">🏦 Bank Transfer</option>
+                <option value="Cash on Delivery">💵 Cash on Delivery (COD)</option>
+              </select>
+              <p class="text-[11px] text-white/35 mt-2">Payment details will be confirmed after we receive your order.</p>
+            </div>
+
             <div class="mt-6 flex items-center justify-between gap-4 rounded-2xl bg-sjm-ink border border-white/10 p-4 sm:p-5">
               <div><div class="text-sm font-black">Quantity</div><div class="text-xs text-white/35 mt-1" id="quantityLabel">Number of solo packs</div></div>
               <div class="flex items-center gap-3">
@@ -573,7 +584,8 @@
       const packName = isBundle ? '10-Pack Bundle — ₱1,000' : 'Solo Pack — ₱120';
       const flavor = flavorSelect.value;
       const total = totalEl.textContent;
-      const message = `Hello House of SJM! Gusto ko pong mag-order:\n\n📦 Package: ${packName}\n🌶 Flavor: ${flavor}\n🔢 Quantity: ${qty}\n💰 Estimated Total: ${total}\n✨ FREE Special Vinegar included\n\nPa-confirm po ng order at delivery details. Thank you!`;
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      const message = `Hello House of SJM! Gusto ko pong mag-order:\n\n📦 Package: ${packName}\n🌶 Flavor: ${flavor}\n🔢 Quantity: ${qty}\n💰 Estimated Total: ${total}\n💳 Payment Method: ${paymentMethod}\n✨ FREE Special Vinegar included\n\nPa-confirm po ng order at delivery details. Thank you!`;
 
       let copied = false;
       try {
